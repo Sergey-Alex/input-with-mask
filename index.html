@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="">
+    <input type="text" id="inp">
+</form>
+
+<script>
+    let inp = document.getElementById('inp');
+    let num = 0;
+    inp.onclick = function () {
+        inp.value = '+';
+    }
+
+    inp.onkeydown = function () {
+        if (inp.value.length < num){
+            num--;
+            return;
+            console.log(num);
+        }
+        if (inp.value.length == 2) inp.value += '(';
+        if (inp.value.length == 6) inp.value += ')-';
+        if (inp.value.length == 11) inp.value += '-';
+        if (inp.value.length == 14) inp.value += '-';
+        if (inp.value.length > 16) inp.value = inp.value.substring(0, inp.value - 1);
+        num++;
+    }
+</script>
+</body>
+</html>
